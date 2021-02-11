@@ -105,7 +105,7 @@ function sumArray(testArray) {
 
 }
   console.log( sumArray(testArray) );
-
+  sumArray(testArray);
 // Here is the test for sumArray(); uncomment it to run it
 
 // testSumArray(testArray);
@@ -114,7 +114,8 @@ function sumArray(testArray) {
 
 /////////////////////////////////////
 /* Problem 5
-Write a function called multiplyArray() that takes an array of numbers as its argument and returns an array whose first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
+Write a function called multiplyArray() that takes an array of numbers as its argument and returns an array
+ whose first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
 
 "The numbers 2,3,4 have a product of 24."
 
@@ -123,9 +124,26 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-function multiplyArray(multArr) {
+
   //eslint-disable-line
+let productOfArray=1;
+function multiplyArray(testArray) {
+  //eslint-disable-line
+  for(let i =0;i< testArray.length;i++)
+  {
+    productOfArray = productOfArray *testArray[i];
+    
+  }
+ 
+ //console.log( sumOfArray );
+  return [productOfArray,
+    ' The numbers  ' +testArray[0]+'    '+testArray[1]+'    ' + testArray[2]+ 
+         ' have Product of  ' + productOfArray ];
+
 }
+  console.log( multiplyArray(testArray) );
+  multiplyArray(testArray);
+
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyArray(testArray);
@@ -138,22 +156,41 @@ function multiplyArray(multArr) {
 
 /////////////////////////////////////
 /* STRETCH GOAL: Problem 6
-Write a function called multiplyAnyArray() that takes an array of numbers of any length as its argument and returns an array whose first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and concatenates a message using the arguments that were passed into the function:
+Write a function called multiplyAnyArray() that takes an array of numbers of any length as its argument
+ and returns an array whose first element is the product of those numbers, and the second element is
+  a string that EXACTLY follows this example and concatenates a message using the arguments that were passed into the function:
 
 "The numbers 1,2,3,4,5 have a product of 120."
 
-IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
+IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, 
+use your multiply() function that you've already created. You're going to have to be resourceful 
+to figure out how to do this. However, you may continue to use the + operator for string concatenation.
 
 This function should be dynamic, accepting an array of any length.
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyAnyArray() function and see if the test passes.*/
 
 // Write your code here
-let testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
-
+let dynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
+let init =1;
 function multiplyAnyArray(dynamicArray) {
   //eslint-disable-line
+  for(let i =0;i< dynamicArray.length;i++)
+  {
+    init =init*dynamicArray[i];
+    
+  }
+ 
+ //console.log( sumOfArray );
+  return [init,
+    ' The numbers  ' +dynamicArray[0]+'    '+dynamicArray[1]+'    ' + dynamicArray[2]+ '    ' + dynamicArray[3]+ '    ' + dynamicArray[4]+ 
+         ' have Product of  ' + init ];
+
 }
+  console.log( multiplyAnyArray(dynamicArray) );
+  multiplyArray(dynamicArray);
+
+
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyAnyArray(testDynamicArray);
